@@ -1,0 +1,138 @@
+.form {
+    background-color: $color_4;
+    color: $color_1;
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 50px 0;
+
+    &__input {
+        width: 100%;
+        margin: 0 0 5px 0;
+
+        input, textarea {
+            color: inherit;
+            font-size: 18px;
+            width: 100%;
+            background: transparent;
+            border-bottom: 2px solid $color_3;
+        }
+
+        small {
+            display: block;
+            height: 25px;
+            color: $color_5;
+            padding: 5px 0;
+        }
+
+        &_name {
+
+            input {
+                padding: 10px 0;
+                transition: .3s;
+    
+                &:focus {
+                    border-color: $color_9;
+                }
+            }
+        }
+
+        &_text {
+
+            textarea {
+                padding: 10px 10px 10px 0;
+                height: 150px;
+                resize: none;
+                overflow-x: hidden;
+                transition: .3s;
+
+                &:focus {
+                    border-color: $color_9;
+                }
+            }
+
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                background: transparent;
+                margin: 10px 0;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                background: $color_3;
+                border-radius: 10px;
+            }
+        }
+
+        &_date {
+
+            input {
+                position: relative;
+                padding: 10px 0;
+                transition: .3s;
+
+                &:focus {
+                    border-color: $color_9;
+                }
+
+                &::-webkit-calendar-picker-indicator {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: auto;
+                    height: auto;
+                    color: transparent;
+                    background: transparent;
+                    cursor: pointer;
+                }
+            
+                &:not(.has-value):before {
+                    content: attr(placeholder);
+                    width: 100%;
+                    color: $color_8;
+                }
+            }
+        }
+    }
+
+    &__success-icon {
+        width: 18px;
+    }
+
+    &__button {
+        width: 180px;
+        font-size: 18px;
+        color: inherit;
+        height: 50px;
+        background-color: $color_7;
+        border-radius: 10px;
+        box-shadow: 0 0 7px 1px $color_9;
+        transition: .3s;
+
+        &:hover {
+            background-color: $color_6;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .form {
+        
+        &__button {
+            width: 100%;
+        }
+    }
+}
+
+.success {
+    border-color: $color_6 !important;
+}
+
+.error {
+    border-color: $color_5 !important;
+}

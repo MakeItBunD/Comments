@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="icon" href="./favicon.ico">
+    <title>Comments</title>
+</head>
+<body>
+    <div class="app">
+        <div class="comments">
+            <div class="container">
+                <div class="comments__container">
+                    <form action="POST" class="comments__form form">
+                        <div class="form__input form__input_name">
+                            <label>Ваше имя <img src="./icons/success.svg" class="form__success-icon" hidden></label>
+                            <input type="text" placeholder="Имя">
+                            <small></small>
+                        </div>
+                        
+                        <div class="form__input form__input_text">
+                            <label>Текст комментария <img src="./icons/success.svg" class="form__success-icon" hidden></label>
+                            <textarea placeholder="Комментарий"></textarea>
+                            <small></small>
+                        </div>
+
+                        <div class="form__input form__input_date">
+                            <label>Дата комментария (необязательное поле) <img src="./icons/success.svg" class="form__success-icon" hidden></label>
+                            <input type="date" placeholder="Нажмите для выбора даты" onchange="this.className = (this.value != '' ? 'has-value' : '')">
+                            <small></small>
+                        </div>
+
+                        <button type="submit" class="form__button">Отправить</button>
+                    </form>
+
+                    <div class="comments__content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
